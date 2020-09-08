@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Inscription </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <ion-list lines="full">
+      <h1 class="h1top">Créer un compte</h1>
+      <br>
+      <div>
+        <ion-label class="labelStyle" for="email">Adresse mail</ion-label>
+        <ion-input type="text" id="email" class="inputStyle" formControlName="email"></ion-input>
+      </div>
+      <div>
+        <ion-label class="labelStyle" for="password">Mot de passe</ion-label>
+        <ion-input type="password" id="password" class="inputStyle" formControlName="password"></ion-input>
+      </div>
+      <div>
+        <ion-label class="labelStyle" for="name">Nom</ion-label>
+        <ion-input type="text" id="name" class="inputStyle" formControlName="name"></ion-input>
+      </div>
+      <div>
+        <ion-label class="labelStyle" for="username">Prénom</ion-label>
+        <ion-input type="text" id="username" class="inputStyle" formControlName="username"></ion-input>
+      </div>
+      <div>
+        <ion-label class="labelStyle" for="age">Age</ion-label>
+        <ion-input type="number" id="age" class="inputStyle" formControlName="age"></ion-input>
+      </div>
+      <div>
+        <ion-label class="labelStyle" for="gender">Genre</ion-label>
+        <ion-select type="text" id="gender" class="inputStyle" formControlName="gender">
+          <ion-select-option value="female">Femme</ion-select-option>
+          <ion-select-option value="male">Homme</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-list>
+    <div class="div0">
+      <ion-button class="bottom0" type="submit" [disabled]="signUpForm.invalid">Créer mon compte</ion-button>
+    </div>
+  </form>
+  <p class="text-danger">{{ errorMessage }}</p>
+</ion-content>
+

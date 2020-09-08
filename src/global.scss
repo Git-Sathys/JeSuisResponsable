@@ -24,3 +24,60 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-title {
+  font-size: 1.2rem;
+}
+
+ion-button {
+  font-size: 1.2rem;
+  border-radius: 20px;
+}
+
+.bottom0 {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+}
+
+.div0 {
+  display: flex;
+  justify-content: center;
+}
+
+.h1top {
+  text-align: center !important;
+  padding: 10px 0 10px 0;
+  border-bottom: solid white 1px;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.list-md {
+  padding: 0 20px 20px 20px;
+}
+
+.menuConnexion {
+  display: flex;
+  justify-content: center;
+}
+
+.petitBouton {
+  font-size: 0.6rem;
+}
+
+.inputStyle {
+  background-color: grey;
+  border-radius: 20px;
+  margin: 2.5%;
+  width: 95%;
+  justify-self: center;
+}
+
+.labelStyle {
+  margin-left: 3.5%;
+}
+
+.paddingCol {
+  padding-left: 10px;
+}
