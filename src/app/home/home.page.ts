@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore} from '@angular/fire/firestore';
+import * as firebase from 'firebase';
+import {AuthService} from '../services/auth.service';
 
 
 @Component({
@@ -7,13 +9,31 @@ import { AngularFirestore} from '@angular/fire/firestore';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  constructor(public db: AngularFirestore) {}
-  user: any = {
-    salut : 'salu'
-  };
+export class HomePage implements  OnInit {
+
+  isAuth: boolean;
+
+  constructor(public db: AngularFirestore,
+              public authService: AuthService
+  ) {}
+
+  ngOnInit() {
+    firebase.auth().onAuthStateChanged(
+        (user) => {
+          if (user) {
+            this.isAuth = true;
+          } else {
+            this.isAuth = false;
+          }
+        }
+    );
+  }
+
+  onSignOut() {
+    this.authService.signOutUser();
+  }
 
   test() {
-    this.db.collection('users').add(this.user);
+    console.log('test');
   }
 }
