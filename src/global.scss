@@ -31,13 +31,15 @@ ion-title {
 
 ion-button {
   font-size: 1.2rem;
-  border-radius: 20px;
 }
 
 .bottom0 {
   position: fixed;
   bottom: 0;
-  width: 90%;
+  width: 80%;
+  @media (max-width: 500px) {
+    width: 60%;
+  }
 }
 
 .div0 {
@@ -66,18 +68,8 @@ ion-button {
   font-size: 0.6rem;
 }
 
-.inputStyle {
-  background-color: grey;
-  border-radius: 20px;
-  margin: 2.5%;
-  width: 95%;
-  justify-self: center;
-}
-
-.labelStyle {
-  margin-left: 3.5%;
-}
-
 .paddingCol {
   padding-left: 10px;
 }
+
+
