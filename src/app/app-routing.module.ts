@@ -9,11 +9,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'auth/signup', component: SignupComponent},
-  { path: 'auth/signin', component: SigninComponent},  {
-    path: 'score',
-    loadChildren: () => import('./pages/score/score.module').then( m => m.ScorePageModule)
-  },
-
+  { path: 'auth/signin', component: SigninComponent},
+  { path: 'score', loadChildren: './pages/score/score.module#ScorePageModule'},
+  { path: 'activite', loadChildren: './pages/activite/activite.module#ActivitePageModule'},
+  { path: 'stats', loadChildren: './pages/stats/stats.module#StatsPageModule'},
 ];
 
 @NgModule({

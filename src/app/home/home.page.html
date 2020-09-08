@@ -13,12 +13,18 @@
       <ion-button class="petitBouton" routerLink="../auth/signin">Connexion</ion-button>
     </div>
     <div>
-      <ion-button class="petitBouton" routerLink="/stats" *ngIf="isAuth">Stats</ion-button>
       <ion-button class="petitBouton" (click)="onSignOut()" *ngIf="isAuth">Déconnexion</ion-button>
     </div>
   </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="isAuth">
+  <div class="logoCenter">
+    <ion-img class="logo" src="../assets/icon/logo.png"></ion-img>
+  </div>
+
+  <div><h4> 450 kg / 1 000 kg </h4></div>
+  <div><h4> Continuez comme ça ! </h4></div>
 
 </ion-content>
+

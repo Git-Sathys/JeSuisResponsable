@@ -36,7 +36,7 @@ ion-button {
 .bottom0 {
   position: fixed;
   bottom: 0;
-  width: 80%;
+  width: 90%;
   @media (max-width: 500px) {
     width: 60%;
   }
@@ -72,4 +72,21 @@ ion-button {
   padding-left: 10px;
 }
 
+.logo{
+  align-content: center;
+  justify-self: center;
+  @media (max-width: 450px) {
+    width: 150px;
+    height: 75px;
+  }
+  @media (min-width: 450px){
+    width: 180px;
+    height: 90px;
+  }
+}
+
+.logoCenter {
+  justify-content: center;
+  display: flex;
+}
 
