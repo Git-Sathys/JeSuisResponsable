@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,10 +13,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
-    IonicModule
-  ],
+    imports: [
+        RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}),
+        IonicModule,
+        ReactiveFormsModule
+    ],
   declarations: [SignupComponent, SigninComponent],
   exports: [RouterModule]
 })
