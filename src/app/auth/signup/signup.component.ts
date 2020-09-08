@@ -4,13 +4,14 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { User } from '../../services/user.service';
 import { NavController, LoadingController } from '@ionic/angular';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  todoId = null;
+
   signUpForm: FormGroup;
   errorMessage: string;
 
