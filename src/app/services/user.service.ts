@@ -16,13 +16,30 @@ export interface User {
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
+  private users: Observable<User[]>;
+
   private usersCollection: AngularFirestoreCollection<User>;
 
   constructor(private db: AngularFirestore,
               private authService: AuthService
   ) {
     this.usersCollection = db.collection('users');
+
+    this.users = this.usersCollection.snapshotChanges().pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+        })
+    );
+  }
+
+  getUsers() {
+    return this.users;
   }
 
   addUser(user: User) {
