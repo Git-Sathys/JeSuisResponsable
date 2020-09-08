@@ -12,34 +12,33 @@
   <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <ion-list lines="full">
       <h1 class="h1top">Créer un compte</h1>
-      <br>
-      <div>
-        <ion-label class="labelStyle" for="email">Adresse mail</ion-label>
-        <ion-input type="text" id="email" class="inputStyle" formControlName="email"></ion-input>
-      </div>
-      <div>
-        <ion-label class="labelStyle" for="password">Mot de passe</ion-label>
-        <ion-input type="password" id="password" class="inputStyle" formControlName="password"></ion-input>
-      </div>
-      <div>
-        <ion-label class="labelStyle" for="name">Nom</ion-label>
-        <ion-input type="text" id="name" class="inputStyle" formControlName="name"></ion-input>
-      </div>
-      <div>
-        <ion-label class="labelStyle" for="username">Prénom</ion-label>
-        <ion-input type="text" id="username" class="inputStyle" formControlName="username"></ion-input>
-      </div>
-      <div>
-        <ion-label class="labelStyle" for="age">Age</ion-label>
-        <ion-input type="number" id="age" class="inputStyle" formControlName="age"></ion-input>
-      </div>
-      <div>
-        <ion-label class="labelStyle" for="gender">Genre</ion-label>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="email">Adresse mail :</ion-label>
+        <ion-input type="text" id="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="password">Mot de passe :</ion-label>
+        <ion-input type="password" id="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="name">Nom :</ion-label>
+        <ion-input type="text" id="name" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="username">Prénom :</ion-label>
+        <ion-input type="text" id="username" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="age">Age : </ion-label>
+        <ion-input type="number" id="age" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="labelStyle" for="gender">Genre :</ion-label>
         <ion-select type="text" id="gender" class="inputStyle" formControlName="gender">
           <ion-select-option value="female">Femme</ion-select-option>
           <ion-select-option value="male">Homme</ion-select-option>
         </ion-select>
-      </div>
+      </ion-item>
     </ion-list>
     <div class="div0">
       <ion-button class="bottom0" type="submit" [disabled]="signUpForm.invalid">Créer mon compte</ion-button>

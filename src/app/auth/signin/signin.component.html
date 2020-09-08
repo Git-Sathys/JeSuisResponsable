@@ -12,21 +12,20 @@
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <ion-list lines="full">
             <h1 class="h1top">Connexion</h1>
-            <br>
-            <div>
-                <ion-label class="labelStyle" for="email">Adresse mail</ion-label>
-                <ion-input type="text" id="email" class="inputStyle" formControlName="email"></ion-input>
-            </div>
-            <div>
-                <ion-label class="labelStyle" for="password">Mot de passe</ion-label>
-                <ion-input type="password" id="password" class="inputStyle" formControlName="password"></ion-input>
-            </div>
+            <ion-item>
+                <ion-label position="floating" for="email">Adresse mail</ion-label>
+                <ion-input type="text" id="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating" for="password">Mot de passe</ion-label>
+                <ion-input type="password" id="password" formControlName="password"></ion-input>
+            </ion-item>
         </ion-list>
         <div class="div0">
             <ion-button class="bottom0" type="submit" [disabled]="signInForm.invalid">Connexion</ion-button>
         </div>
     </form>
-    <ion-button (click)="authentification()">Facebook</ion-button>
+<!--    <ion-button (click)="authentification()">Facebook</ion-button>-->
     <p class="text-danger">{{ errorMessage }}</p>
 </ion-content>
 

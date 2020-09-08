@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { User } from '../../services/user.service';
 import { NavController, LoadingController } from '@ionic/angular';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -26,7 +27,8 @@ export class SignupComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private router: Router,
-              private loading: LoadingController) { }
+              private loading: LoadingController,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.initForm();
@@ -53,8 +55,7 @@ export class SignupComponent implements OnInit {
     this.user.age = this.signUpForm.get('age').value;
 
     this.authService.createNewUser(email, password).then(() => {
-          // this.todoService.addUser(this.user, this.authService.currentUid).then(() => {
-          // });
+          this.userService.addUser(this.user);
           this.router.navigate(['/home']);
         },
         (error) => {
