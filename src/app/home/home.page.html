@@ -6,19 +6,14 @@
   </ion-toolbar>
 
   <div class="menuConnexion">
-    <div routerLinkActive="active" *ngIf="!isAuth">
+    <div routerLinkActive="active">
       <ion-button class="petitBouton" routerLink="../auth/signup">Créer un compte</ion-button>
     </div>
-    <div routerLinkActive="active" *ngIf="!isAuth">
+    <div routerLinkActive="active">
       <ion-button class="petitBouton" routerLink="../auth/signin">Connexion</ion-button>
-    </div>
-    <div>
-      <ion-button class="petitBouton" routerLink="/stats" *ngIf="isAuth">Stats</ion-button>
-      <ion-button class="petitBouton" (click)="onSignOut()" *ngIf="isAuth">Déconnexion</ion-button>
     </div>
   </div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
 </ion-content>
