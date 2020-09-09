@@ -12,11 +12,13 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FooterComponent],
   entryComponents: [],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -32,6 +34,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FooterComponent]
 })
 export class AppModule {}
