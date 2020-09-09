@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { User } from '../../interfaces/user.model';
+import { User } from '../../services/user.service';
 import { NavController, LoadingController } from '@ionic/angular';
 import { UserService } from '../../services/user.service';
 
@@ -18,8 +18,8 @@ export class SignupComponent implements OnInit {
 
   user: User = {
     email: '',
-    firstName: '',
-    lastName: '',
+    name: '',
+    username: '',
     gender: '',
     age: null,
   };
@@ -49,8 +49,8 @@ export class SignupComponent implements OnInit {
     const password = this.signUpForm.get('password').value;
     const email = this.signUpForm.get('email').value;
     this.user.email = this.signUpForm.get('email').value;
-    this.user.firstName = this.signUpForm.get('name').value;
-    this.user.lastName = this.signUpForm.get('username').value;
+    this.user.name = this.signUpForm.get('name').value;
+    this.user.username = this.signUpForm.get('username').value;
     this.user.gender = this.signUpForm.get('gender').value;
     this.user.age = this.signUpForm.get('age').value;
 

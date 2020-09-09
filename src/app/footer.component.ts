@@ -1,8 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { AuthService } from './services/auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ChangeDetectorRef } from '@angular/core'
 
 @Component({
   selector: 'app-footer',
@@ -10,5 +9,20 @@ import { ChangeDetectorRef } from '@angular/core'
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  ngOnInit() { }
+  isAuth: boolean;
+
+  constructor(public db: AngularFirestore,
+              public authService: AuthService) {}
+
+  ngOnInit() {
+    firebase.auth().onAuthStateChanged(
+        (user) => {
+          if (user) {
+            this.isAuth = true;
+          } else {
+            this.isAuth = false;
+          }
+    
+    });
+  }
 }

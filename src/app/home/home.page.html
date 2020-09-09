@@ -6,10 +6,10 @@
   </ion-toolbar>
 
   <div class="menuConnexion">
-    <div routerLinkActive="active">
+    <div routerLinkActive="active" *ngIf="!isAuth">
       <ion-button class="petitBouton" routerLink="../auth/signup">Créer un compte</ion-button>
     </div>
-    <div routerLinkActive="active">
+    <div routerLinkActive="active" *ngIf="!isAuth">
       <ion-button class="petitBouton" routerLink="../auth/signin">Connexion</ion-button>
     </div>
     <div>
