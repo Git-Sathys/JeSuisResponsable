@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User, UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-score',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScorePage implements OnInit {
 
-  constructor() { }
+  users: User[];
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(res => {
+      this.users = res;
+    });
   }
 
 }
